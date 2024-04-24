@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="cssnake.css">
+    <script src="javasnake.js" defer></script> 
+</head>
+    <body>
+        <main id="main">
+            <h1 id="login-header">:)</h1>
+
+            <form id="login-form"> <!--login form -->
+                <input type="text" name="username" id="username-field" class="login-form-field" placeholder="lietotājvārds"> <!--input foor username-->
+                <input type="password" name="password" id="password-field" class="login-form-field" placeholder="parole"> <!--input foor password-->
+                <input type="submit" value="Login" id="login-form-submit"> <!--button-->
+            </form>
+
+            <div id="login-error-msg-holder"> <!--login errror-->
+                <p id="login-error-msg">Nepareizs lietotājvārds <span id="error-msg-second-line">un/vai parole</span></p> <!--space for login error and the messages-->
+            </div>
+
+        </main>
+    </body>
+</html>

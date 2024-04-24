@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+  }
+
+body { /* main things for css */
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: #093d17;
+}
+
+#main { /* main kaste */
+    width: 40%; /* lielums */
+    height: 60%;
+    display: grid; /* displeja veids */
+    justify-items: center; /* izlidzinasana un novietojums */
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black; /* drop shadow */
+}
+#login-form {
+    align-self: flex-start; /* displejs  */
+    display: grid;
+    justify-items: center;  /* novietojums */
+    align-items: center;
+}
+
+.login-form-field::placeholder { /* redige vietturi */
+    color: grey; 
+}
+
+.login-form-field { /* login kastes */
+    border: none;
+    border-bottom: 1px solid #3a3a3a; /* tikai apmales apaksa */
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+}
+
+#login-form-submit { /* login poga */
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bolder;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+}
+#login-error-msg-holder { /* holder for error */
+    width: 100%; /* lielums, novietojums */
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items:baseline; /* nozime ka ir konteinera augsaa */
+  }
+  
+  #login-error-msg { /* error */
+      width: 23%; /* lielums, novietojums and fonts */
+      text-align: center;
+      margin: 0;
+      padding: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #590202; /* kaste ap tekstu */
+      border: 1px solid #590202;
+      background-color: #e08484;
+      border-radius:7px; /* noapati sturi */
+      opacity: 0; /*  vai var redzet vai ne */
+  }
+  
+  #error-msg-second-line { /* error 2nd line */
+      display: block;
+  }  
