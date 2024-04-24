@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+}
+
+body { /* main things for css */
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /*background-color: gray; */
+}
+
+#main { /* main kaste */
+    width: 100%; /* lielums */
+    height: 100%;
+    display: grid; /* displeja veids */
+    justify-items: center; /* izlidzinasana un novietojums */
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black; /* drop shadow */
+}
+
+#hr {
+    border: 3px solid gray;
+}
+
+#header1 {
+    position:absolute;
+    top:10px;    
+    align-items: center;
+}
+
+#mainDiv {
+  border: 5px solid black;
+  height: 80%;
+  width: 90%;
+  display: grid;
+  padding: 10px;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:  
+    "div1 div2"
+    "div1 div3";
+
+}
+
+.darbinieki {
+    background: #eaeaea; 
+    border: 5px solid gray;
+    grid-area: div1;
+}
+
+.vecasAtslegas {
+    background: #eaeaea;  
+    border: 5px solid gray;
+    grid-area: div2;
+}
+
+.jaunasAtslegas{
+    background: #eaeaea;  
+    border: 5px solid gray;
+    grid-area: div3;
+}
+
+#titleDarbinieki {
+    text-align: center;
+}
+
+#titleVecais {
+    text-align: center;
+}
+
+#titleJaunais {
+    text-align: center;
+}
+
+#vAButtons {
+    background-color: rgb(61, 255, 61);
+    border: solid 1px black;
+    border-radius: 6px;
+    margin-right:10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#vAtslegas {
+    padding-left: 10px;
+}
