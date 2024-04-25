@@ -11,27 +11,30 @@
     <main id="main">
         <h1 id="header1"><span>Atslēgu izsniegšanas sistēma</span></h1>
         <div id="mainDiv">
+
+            
             <div class="darbinieki">
                 <h2 id="titleDarbinieki">Šobrīd aktīvie darbinieki</h2>
                 <hr id="hr">
-                    <div id="vAtslegas">
-                        <button id="vAButtons" onclick="ieraksts()" >Janis Purnis</button>
+                    <div id="vAtslegas1">
+                        <button id="vAButtons1" class = 'vatsleg' onclick="var temp = poga1();ieraksts(); return temp;">Jans Purns</button> <!-- myFunc() ir funkcija ar 2 funkcijām-->
+
                     </div>
             </div>
 
             <div class="vecasAtslegas">
                 <h2 id="titleVecais">Vecais korpuss</h2>
                     <hr id="hr">
-                    <div id="vAtslegas">
-                        <button id="vAButtons" onclick="ieraksts()">1.kab</button>
+                    <div id="vAtslegas2">
+                        <button id="vAButtons2" class = 'vatsleg' onclick="var temp = poga2();ieraksts(); return temp;" >1.kab</button>
                     </div>
             </div>
 
             <div class="jaunasAtslegas">
                 <h2 id="titleJaunais">Jaunais korpuss</h2>
                 <hr id="hr">
-                    <div id="vAtslegas">
-                        <button id="vAButtons" onclick="ieraksts()">211.kab</button>
+                    <div id="vAtslegas3">
+                        <button id="vAButtons3" class = 'vatsleg' onclick="var temp = poga3();ieraksts(); return temp;">211.kab</button>
                     </div>
             </div>
         </div>
