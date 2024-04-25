@@ -1,18 +1,21 @@
-const button = document.getElementById('vAButtons');
-
-button.addEventListener('click', function() {
-    const result = window.confirm('Are you sure you want to proceed?');
-
-    if (result) {
-        const currentColor = button.style.backgroundColor;
-
-        
-        if (currentColor === 'red') {
-            button.style.backgroundColor = 'green';
-        } else {
-            button.style.backgroundColor = 'red';
-        }
-    } else {
-
-    }
-});
+function poga1() {
+    console.log("esam funkcija")
+    var element = document.getElementById("vAButtons1");
+    if (element.style.backgroundColor == "red") {
+        element.style.backgroundColor = "green"}
+    else { element.style.backgroundColor = "red"}
+}
+function poga2() {
+    console.log("esam funkcija")
+    var element = document.getElementById("vAButtons2");
+    if (element.style.backgroundColor == "red") {
+        element.style.backgroundColor = "green"}
+    else { element.style.backgroundColor = "red"}
+}
+function poga3() {
+    console.log("esam funkcija")
+    var element = document.getElementById("vAButtons3");
+    if (element.style.backgroundColor == "red") {
+        element.style.backgroundColor = "green"}
+    else { element.style.backgroundColor = "red"}
+}
