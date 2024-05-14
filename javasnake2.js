@@ -23,19 +23,23 @@ function ieraksts() {
      console.log("Button clicked at: " + formattedTime);
  }
 
-/* function popUps() {              //* KYS!!!!!!!!!!!!!!!!!!!!!!!!
+ function popUps() {              //* KYS!!!!!!!!!!!!!!!!!!!!!!!!
     
 
     let buttonIsClicked = false;
-    vatslega.onclick('click', () =>{
-        buttonIsClicked = !buttonIsClicked;
+
+    window.addEventListener('click', () =>{
+        var elem = document.getElementById('vAButtons1');
     })
 
-    if(buttonIsClicked === true){
+    if(buttonIsClicked === false){
         alert("Izvēlēties šo atslēgu?");
+        buttonIsClicked != buttonIsClicked;
     }
     else {
         alert("Nodot šo atslēgu?");
+        console.log(buttonIsClicked);
+        buttonIsClicked != buttonIsClicked;
     }
 
 }
@@ -43,4 +47,11 @@ function ieraksts() {
 function myFunc() {
     popUps();
     ieraksts();
-} */
+}
+
+fetch('http://localhost:3000/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // parada datus
+  })
+  .catch(error => console.error('Error:', error));

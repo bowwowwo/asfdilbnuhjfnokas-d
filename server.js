@@ -1,42 +1,54 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
+const mysql = require('mysql');
 
-const server = http.createServer((req, res) => {
-    let filePath = '.' + req.url;
-    if (filePath === './') {
-        filePath = './html.html';
-    }
+const hostname = '127.0.0.1';
+const port = 3000;
 
-    const extname = path.extname(filePath);
-    let contentType = 'text/html';
-    switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
-            break;
-        case '.css':
-            contentType = 'text/css';
-            break;
-    }
-
-    fs.readFile(filePath, (err, content) => {
-        if (err) {
-            if (err.code === 'ENOENT') {
-                res.writeHead(404);
-                res.end('404 Not Found');
-            } else {
-                res.writeHead(500);
-                res.end('Internal Server Error');
-            }
-        } else {
-            res.writeHead(200, { 'Content-Type': contentType });
-            res.end(content, 'utf-8');
-        }
-    });
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'username',
+  password: 'password',
+  database: 'dbname'
 });
 
-const PORT = process.env.PORT || 3000;
+connection.connect();
 
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+const server = http.createServer((req, res) => {
+  const reqUrl = url.parse(req.url, true);
+  const filePath = path.join(__dirname, reqUrl.pathname);
+
+  // raada failus
+
+      let Path = '.' + req.url;
+    if (Path === './') {
+        Path = './html.html';
+    }
+  if (req.method === 'GET') {
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        res.statusCode = 404;
+        res.setHeader('Content-Type', 'text/plain');
+        res.end('File Not Found');
+        return;
+      }
+
+      let contentType = 'text/html';
+      if (filePath.endsWith('.css')) {
+        contentType = 'text/css';
+      } else if (filePath.endsWith('.js')) {
+        contentType = 'text/javascript';
+      }
+
+      res.statusCode = 200;
+      res.setHeader('Content-Type', contentType);
+      res.end(data);
+    });
+  } else {
+    res.statusCode = 405;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Method Not Allowed');
+  }
 });
